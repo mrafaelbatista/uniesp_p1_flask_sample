@@ -1,0 +1,18 @@
+{% extends "modelo.html" %}
+{% block conteudo %}
+<h1>Alterar Termo</h1>
+
+<form action="{{ url_for('salvar_termo', termo_id=termo.id) }}" method="post">
+  <div class="mb-3">
+    <label for="termo" class="form-label">Termo</label>
+    <input  class="form-control" id="termo" name="termo" value="{{ termo.termo }}">
+    <div id="termoHelp" class="form-text">Altere o termo.</div>
+  </div>
+  <div class="mb-3">
+    <label for="definicao" class="form-label">Definição</label>
+    <textarea class="form-control" id="definicao" name="definicao" rows="3">{{ termo.definicao }}</textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+
+{% endblock %}

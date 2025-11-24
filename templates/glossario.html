@@ -18,8 +18,9 @@
       <td>{{ termo[0] }}</td>
       <td>{{ termo[1] }}</td>
       <td>
-        <form method="post" action="{{ url_for('excluir_termo', termo_id=loop.index-1) }}">
-        <button type="submit" class="btn btn-danger">Excluir</button>
+        <a href="{{ url_for('alterar_termo', termo_id=loop.index-1) }}" class="btn btn-primary">Alterar</a>
+        <form method="post" action="{{ url_for('excluir_termo', termo_id=loop.index-1) }}" style="display: inline;">
+          <button type="submit" class="btn btn-danger">Excluir</button>
         </form>
       </td>
     </tr>
